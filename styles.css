@@ -7,11 +7,65 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #ACE1AF; /* Light green background */
+    padding: 0; /* Ensure there's no extra padding */
 }
 
-/* Container Styling */
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    background-color: #4d89bd;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links li {
+    display: inline;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #ACE1AF;
+}
+
+/* Logo Styling */
+.logo-img {
+    height: 40px;
+    margin-left: -20px; /* Adjust for left spacing */
+}
+
+/* Adjust the main content to account for the fixed navbar */
 .container {
-    margin-top: 80px;
+    margin-top: 80px; /* Ensure the content is pushed down below the navbar */
     text-align: center;
     background-color: #fff;
     padding: 40px;
@@ -71,85 +125,34 @@ button:hover {
 @media (max-width: 600px) {
     body {
         padding: 10px;
+        height: auto; /* Adjust height to accommodate content */
     }
-    .container {
-        padding: 20px;
-    }
-    h1 {
-        font-size: 22px;
-    }
-    input, button {
-        font-size: 14px;
-        padding: 10px 15px;
-    }
-    #result {
-        font-size: 16px;
-    }
-}
-
-/* Navbar Styling */
-.navbar {
-    width: 100%;
-    background-color: #4d89bd;
-    padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar-container {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar-logo {
-    font-size: 24px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.navbar-links li {
-    display: inline;
-}
-
-.navbar-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.navbar-links a:hover {
-    color: #ACE1AF;
-}
-
-/* Logo Styling */
-.logo-img {
-    height: 40px;
-    margin-left: -20px; /* Adjust for left spacing */
-}
-
-/* Responsive Navbar */
-@media (max-width: 600px) {
+    
     .navbar-container {
         flex-direction: column;
+        align-items: center;
     }
+    
     .navbar-links {
         flex-direction: column;
         gap: 10px;
     }
+    
     .container {
-        margin-top: 100px; /* Push content down further */
+        margin-top: 100px; /* Push content down further on small screens */
+        padding: 20px; /* Ensure there's enough padding */
+    }
+    
+    h1 {
+        font-size: 22px;
+    }
+    
+    input, button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    
+    #result {
+        font-size: 16px;
     }
 }
